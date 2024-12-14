@@ -60,7 +60,7 @@ const Hero = () => {
                 No Minimums
               </li>
               <li className="flex items-center pl-7 relative">
-                <span className="absolute left-0 top-1 w-5 h-5 bg-[url('../public/images/check-blue.svg')] bg-no-repeat bg-contains"></span>
+                <span className="absolute left-0 top-1 w-5 h-5 bg-[url('../public/images/check-blue.svg')] bg-no-repeat bg-contain"></span>
                 Quality Guaranteed
               </li>
             </ul>

@@ -16,11 +16,9 @@ const Navbar = () => {
   const navItems = [
     { label: 'Home', target: 'home', icon: Home },
     { label: 'Designs', target: 'designs', icon: Palette },
-    { label: 'Services', target: 'services', icon: Briefcase },
     { label: 'About', target: 'about', icon: User },
     { label: 'Pricing', target: 'pricing', icon: DollarSign },
-    { label: 'Testimonials', target: 'testimonials', icon: Star },
-    { label: 'FAQ', target: 'faq', icon: HelpCircle },
+    { label: 'Testimonials', target: 'testimonials', icon: Star }
   ];
 
   useEffect(() => {
