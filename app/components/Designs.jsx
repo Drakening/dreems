@@ -81,7 +81,7 @@ const Designs = () => {
     <section className="px-4">
       <div className="text-center mb-8">
         
-          <h2 className="uppercase text-[#1f2e3b] tracking-normal font-medium text-center pb-2 mb-2 relative after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-16 after:h-1 after:bg-[#1f2e3b]">
+          <h2 className="uppercase text-[#1f2e3b] text-xl sm:text-2xl lg:text-3xl tracking-normal font-medium text-center pb-2 mb-2 relative after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-16 after:h-1 after:bg-[#1f2e3b]">
             Recent Designs
           </h2>
           <p>Discover our latest sold apparel.</p>
@@ -102,7 +102,7 @@ const Designs = () => {
                   alt={design.name} 
                   width={280} 
                   height={330} 
-                  className="object-cover" 
+                  className="object-cover w-[230] h-[330px]" 
                 />
                 <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full text-center bg-gray-500/50 text-white text-2xl py-2 flex justify-center items-center">
                   <FaEye />

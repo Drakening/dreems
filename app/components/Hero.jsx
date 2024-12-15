@@ -11,8 +11,8 @@ const Hero = () => {
   };
 
   return (
-    <section className="px-4 sm:px-6 lg:px-8 py-12">
-      <div className="max-w-7xl mx-auto flex flex-col-reverse lg:flex-row-reverse items-center justify-between gap-8">
+    <section className="px-4 sm:px-6 lg:px-8 py-8">
+      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row-reverse items-center justify-between gap-8">
         <div className="w-full lg:w-1/2">
           <Image 
             src={HeroPic} 
@@ -25,13 +25,13 @@ const Hero = () => {
 
         <div className="w-full lg:w-1/2 text-center">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-antonio mb-4">
-            Custom <span className="block text-3xl sm:text-4xl lg:text-5xl relative">
+            Custom <span className="block text-3xl sm:text-4xl lg:text-5xl relative mb-2">
               T-Shirts
               <svg 
                 xmlns="http://www.w3.org/2000/svg" 
                 fill="#1f2e3b" 
                 viewBox="0 0 145 8" 
-                className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-full max-w-[175px] h-2"
+                className="absolute bottom-[-10px] left-1/2 transform -translate-x-1/2 w-full max-w-[175px] h-2"
               >
                 <path d="M141 8H4C1.8 8 0 6.2 0 4s1.8-4 4-4h137c2.2 0 4 1.8 4 4s-1.8 4-4 4z"/>
               </svg>

@@ -12,46 +12,48 @@ const Questions = () => {
   return (
     <section className="px-4 mb-0">
       
-        <h2 className="uppercase text-[#1f2e3b] tracking-normal font-medium text-center pb-2 mb-2 relative after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-16 after:h-1 after:bg-[#1f2e3b]">
+        <h2 className="uppercase text-[#1f2e3b] text-xl sm:text-2xl lg:text-3xl tracking-normal font-medium text-center pb-2 mb-2 relative after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-16 after:h-1 after:bg-[#1f2e3b]">
           Frequently asked questions
         </h2>
         <p className="text-center">Answers Await: Your FAQs Answered Here.</p>
       
       
-      <div className="py-16 px-8 flex flex-col justify-center items-center sm:px-2 sm:py-4">
-        {faqData.map((faq, index) => (
-          <div key={index} className="w-full">
-            <button
-              className={`
-                w-full py-6 text-2xl cursor-pointer bg-transparent border-none outline-none text-left 
-                transition-all duration-500 ease-linear flex items-center justify-between 
-                sm:text-xl sm:py-4
-              `}
-              onClick={() => accordion(index)}
-            >
-              <span>{faq.question}</span>
-              <ChevronRight 
+      <div className="py-16 px-8 sm:px-2 sm:py-4 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-1 gap-8">
+          {faqData.map((faq, index) => (
+            <div key={index} className="w-full">
+              <button
                 className={`
-                  text-[#009ddc] transition-transform duration-300 
-                  ${openIndex === index ? 'rotate-90' : ''}
-                `} 
-                size={24} 
-              />
-            </button>
-            <div
-              className={`
-                w-[80%] mx-auto overflow-hidden transition-all duration-300 ease-in-out 
-                border-b border-gray-300 
-                sm:w-[90%]
-                ${openIndex === index ? 'max-h-[1000px] py-4' : 'max-h-0 py-0'}
-              `}
-            >
-              <p className="text-2xl text-black/75 text-left w-full sm:text-base">
-                {faq.answer}
-              </p>
+                  w-full py-6 text-2xl cursor-pointer bg-transparent border-none outline-none text-left 
+                  transition-all duration-500 ease-linear flex items-center justify-between 
+                  sm:text-xl sm:py-4
+                `}
+                onClick={() => accordion(index)}
+              >
+                <span>{faq.question}</span>
+                <ChevronRight 
+                  className={`
+                    text-[#009ddc] transition-transform duration-300 
+                    ${openIndex === index ? 'rotate-90' : ''}
+                  `} 
+                  size={24} 
+                />
+              </button>
+              <div
+                className={`
+                  w-[80%] mx-auto overflow-hidden transition-all duration-300 ease-in-out 
+                  border-b border-gray-300 
+                  sm:w-[90%]
+                  ${openIndex === index ? 'max-h-[1000px] py-4' : 'max-h-0 py-0'}
+                `}
+              >
+                <p className="text-2xl text-black/75 text-left w-full sm:text-base">
+                  {faq.answer}
+                </p>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );

@@ -11,7 +11,7 @@ const About = () => {
   return (
     <section className="px-4 sm:px-6 lg:px-8 py-16 bg-gray-50">
       <div className="text-center mb-12">
-        <h2 className="text-4xl font-bold mb-4 text-gray-800">About Us</h2>
+        <h2 className="uppercase text-[#1f2e3b] text-xl sm:text-2xl lg:text-3xl tracking-normal font-medium text-center pb-2 mb-2 relative after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-16 after:h-1 after:bg-[#1f2e3b]">About Us</h2>
         <p className="text-xl text-gray-600">Sharing Our Journey, Values, and Passion.</p>
       </div>
       
@@ -54,7 +54,7 @@ const SocialIcon = ({ Icon, color, url }) => (
     target="_blank"
     rel="noopener noreferrer"
     className={`
-      text-gray-400 hover:text-${color}-500
+      text-black hover:text-gray-700
       transform transition-all duration-300 ease-in-out
       hover:scale-110 hover:-translate-y-1
     `}

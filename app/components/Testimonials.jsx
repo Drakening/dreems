@@ -28,7 +28,7 @@ const Testimonials = () => {
   return (
     <section className="px-4 py-8">
       <div className="text-center mb-8">
-          <h2 className="text-3xl font-bold mb-2">Testimonials</h2>
+          <h2 className="uppercase text-[#1f2e3b] text-xl sm:text-2xl lg:text-3xl tracking-normal font-medium text-center pb-2 mb-2 relative after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-16 after:h-1 after:bg-[#1f2e3b]">Testimonials</h2>
           <p className="text-xl text-gray-600">Words from the Wise.</p>
     
       </div>

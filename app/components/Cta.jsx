@@ -11,7 +11,7 @@ const Cta = () => {
   };
 
   return (
-    <div className="relative w-full h-[330px] md:h-[250px] sm:h-[220px] overflow-hidden mb-16 md:mb-8 sm:mb-8">
+    <div className="relative w-full h-[330px] md:h-[250px] sm:h-[220px] overflow-hidden mb-16 mt-16 md:mb-8 md:mt-8 sm:mb-8">
       <Image 
         src={bgImage} 
         alt="Background" 

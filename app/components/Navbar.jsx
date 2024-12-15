@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Menu, X, Home, Palette, Briefcase, User, DollarSign, Star, HelpCircle, Mail, Zap } from 'lucide-react';
+import Image from 'next/image';
+
 
 const Navbar = () => {
   const [showNavbar, setShowNavbar] = useState(false);
@@ -44,13 +46,16 @@ const Navbar = () => {
   return (
     <nav className="sticky top-0 z-50 bg-white h-20 w-full shadow-md">
       <div className="container mx-auto px-4 h-full flex justify-between items-center">
-        {/* Logo */}
         <div className="flex items-center">
-          <Zap className="w-8 h-8 text-[#009ddc]" />
-          <span className="ml-2 text-xl font-bold text-[#04091e]">YourLogo</span>
+          <Image 
+            src='/images/logo.png'
+            alt="logo of company" 
+            width={40} 
+            height={40} 
+            className="w-10 h-10"
+          />
+          <span className="ml-2 text-xl font-bold text-[#04091e]">Dreem</span>
         </div>
-
-        {/* Mobile Menu Icon */}
         <div 
           className="md:hidden cursor-pointer z-[1000]" 
           onClick={handleShowNavbar}
@@ -62,7 +67,6 @@ const Navbar = () => {
           )}
         </div>
 
-        {/* Navigation Links */}
         <div 
           className={`
             fixed md:static 
@@ -126,7 +130,6 @@ const Navbar = () => {
           </ul>
         </div>
 
-        {/* Contact Button */}
         <div 
           className="
             hidden md:flex 

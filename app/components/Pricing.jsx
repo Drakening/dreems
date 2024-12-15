@@ -43,25 +43,23 @@ const Pricing = () => {
       style={{backgroundImage: `url(${BackgroundImage.src})`}}
     >
       <div className="text-center mb-8">
-       
-          <h2 className="uppercase text-[#1f2e3b] tracking-normal font-medium text-center pb-2 mb-2 relative after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-16 after:h-1 after:bg-[#1f2e3b]">
-            Pricing
-          </h2>
-          <p>Unbeatable Deals: Explore Our Low Prices.</p>
-        
+        <h2 className="uppercase text-[#1f2e3b] text-xl sm:text-2xl lg:text-3xl tracking-normal font-medium text-center pb-2 mb-2 relative after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-16 after:h-1 after:bg-[#1f2e3b]">
+          Pricing
+        </h2>
+        <p>Unbeatable Deals: Explore Our Low Prices.</p>
       </div>
       
-      <div className="bg-[#292828] text-[#cccccc] font-nunito w-[70%] md:w-[90%] sm:w-full rounded-lg p-[5%] mx-auto flex flex-row md:flex-col justify-around">
+      <div className="bg-[#292828] text-[#cccccc] font-nunito max-w-5xl rounded-lg p-8 mx-auto flex flex-col md:flex-row gap-8 justify-around">
         {priceItems.map((item, index) => (
           <div 
             key={index} 
-            className="px-[10%] py-[5%] flex-1 border-r border-white/10 text-left last:border-r-0 md:border-r-0"
+            className="w-full md:w-1/2 px-8 py-6 border-b md:border-b-0 md:border-r border-white/10 text-left last:border-b-0 last:border-r-0"
           >
             <h2 className="font-semibold">{item.title}</h2>
             <h4 className="font-normal m-0">{item.price}</h4>
             <span className="font-light">{item.description}</span>
             
-            <ul className="my-[20%] md:my-[5%] text-left">
+            <ul className="my-[10%] text-left">
               {item.features.map((feature, i) => (
                 <li key={i} className="font-light mt-5">{feature}</li>
               ))}
