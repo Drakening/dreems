@@ -11,7 +11,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="px-4 sm:px-6 lg:px-8 py-8">
+    <section className="px-4 sm:px-6 lg:px-8 pt-4 pb-8">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row-reverse items-center justify-between gap-8">
         <div className="w-full lg:w-1/2">
           <Image 
