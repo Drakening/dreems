@@ -80,41 +80,37 @@ const Designs = () => {
   return (
     <section className="px-4">
       <div className="text-center mb-8">
-        
-          <h2 className="uppercase text-[#1f2e3b] text-xl sm:text-2xl lg:text-3xl tracking-normal font-medium text-center pb-2 mb-2 relative after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-16 after:h-1 after:bg-[#1f2e3b]">
-            Recent Designs
-          </h2>
-          <p>Discover our latest sold apparel.</p>
-        
+        <h2 className="uppercase text-[#1f2e3b] text-xl sm:text-2xl lg:text-3xl tracking-normal font-medium text-center pb-2 mb-2 relative after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-16 after:h-1 after:bg-[#1f2e3b]">
+          Recent Designs
+        </h2>
+        <p>Discover our latest sold apparel.</p>
       </div>
 
-      <div className="flex flex-wrap justify-between gap-4">
-       
-          {designsData.map((design) => (
-            <div 
-              key={design.id} 
-              className="inline-block max-w-[55vw] min-w-[250px] m-[10px] shadow-lg hover:cursor-pointer transition-shadow duration-300 hover:shadow-xl" 
-              onClick={() => openModal(design.image)}
-            >
-              <div className="relative">
-                <Image 
-                  src={design.image} 
-                  alt={design.name} 
-                  width={280} 
-                  height={330} 
-                  className="object-cover w-[230] h-[330px]" 
-                />
-                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full text-center bg-gray-500/50 text-white text-2xl py-2 flex justify-center items-center">
-                  <FaEye />
-                </div>
-              </div>
-              <div className="bg-white p-3 text-left">
-                <div className="font-semibold text-xl mb-2">{design.name}</div>
-                <div className="text-base text-gray-600">{design.info}</div>
+      <div className="flex flex-wrap justify-center sm:justify-between gap-4">
+        {designsData.map((design) => (
+          <div 
+            key={design.id} 
+            className="inline-block w-full sm:w-[calc(50%-1rem)] md:w-[calc(33.33%-1rem)] lg:w-[calc(25%-1rem)] max-w-[280px] m-[10px] shadow-lg hover:cursor-pointer transition-shadow duration-300 hover:shadow-xl" 
+            onClick={() => openModal(design.image)}
+          >
+            <div className="relative">
+              <Image 
+                src={design.image} 
+                alt={design.name} 
+                width={280} 
+                height={330} 
+                className="object-cover w-full h-[330px]" 
+              />
+              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full text-center bg-gray-500/50 text-white text-2xl py-2 flex justify-center items-center">
+                <FaEye />
               </div>
             </div>
-          ))}
-        
+            <div className="bg-white p-3 text-left">
+              <div className="font-semibold text-xl mb-2">{design.name}</div>
+              <div className="text-base text-gray-600">{design.info}</div>
+            </div>
+          </div>
+        ))}
       </div>
 
       {modalOpen && (
@@ -144,3 +140,4 @@ const Designs = () => {
 };
 
 export default Designs;
+

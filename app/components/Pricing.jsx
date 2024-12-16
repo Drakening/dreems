@@ -1,19 +1,20 @@
 'use client'
-import Image from 'next/image';
-import BackgroundImage from '../../public/images/bg_char_001_pc.png';
+import Image from 'next/image'
+import BackgroundImage from '../../public/images/bg_char_001_pc.png'
+import { Check } from 'lucide-react'
 
 const Pricing = () => {
   const scrollToContact = () => {
-    const Section = document.getElementById('contact');
+    const Section = document.getElementById('contact')
     if (Section) {
-      Section.scrollIntoView({ behavior: 'smooth', block: 'start', duration: 500 });
+      Section.scrollIntoView({ behavior: 'smooth', block: 'start', duration: 500 })
     }
-  };
+  }
 
   const priceItems = [
     {
-      title: 'Basic',
-      price: 'Price: R300',
+      title: 'Basic T-shirt design',
+      price: 'R300',
       description: 'one side of the apparel',
       features: [
         'Black and white colors',
@@ -21,11 +22,10 @@ const Pricing = () => {
         'Standard-quality T-shirt',
         'Sizes options(S-L)',
       ],
-      buttonStyle: 'bg-transparent border border-[#009ddc] text-[#009ddc]',
     },
     {
-      title: 'Pro',
-      price: 'Price: R500',
+      title: 'Pro T-shirt design',
+      price: 'R500',
       description: 'both sides of the apparel',
       features: [
         'Full color spectrum',
@@ -33,49 +33,76 @@ const Pricing = () => {
         'High-quality T-shirt',
         'Sizes options(S-XXL)',
       ],
-      buttonStyle: 'bg-[#009ddc] text-white',
+      isPopular: true,
     },
-  ];
+    {
+      title: 'self potrait',
+      price: 'R800',
+      description: 'Custom self potrait of your desire',
+      features: [
+        'Full color spectrum',
+        'Complex design creation',
+        'Quality frame',
+        'Sizes options(M-L)',
+      ],
+    },
+  ]
 
   return (
     <section 
-      className="relative w-full h-full px-4 mb-16 bg-cover bg-no-repeat" 
+      className="relative w-full h-full px-4 py-16 bg-cover bg-no-repeat" 
       style={{backgroundImage: `url(${BackgroundImage.src})`}}
     >
-      <div className="text-center mb-8">
+      <div className="text-center mb-12">
         <h2 className="uppercase text-[#1f2e3b] text-xl sm:text-2xl lg:text-3xl tracking-normal font-medium text-center pb-2 mb-2 relative after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-16 after:h-1 after:bg-[#1f2e3b]">
           Pricing
         </h2>
         <p>Unbeatable Deals: Explore Our Low Prices.</p>
       </div>
       
-      <div className="bg-[#292828] text-[#cccccc] font-nunito max-w-5xl rounded-lg p-8 mx-auto flex flex-col md:flex-row gap-8 justify-around">
-        {priceItems.map((item, index) => (
-          <div 
-            key={index} 
-            className="w-full md:w-1/2 px-8 py-6 border-b md:border-b-0 md:border-r border-white/10 text-left last:border-b-0 last:border-r-0"
-          >
-            <h2 className="font-semibold">{item.title}</h2>
-            <h4 className="font-normal m-0">{item.price}</h4>
-            <span className="font-light">{item.description}</span>
-            
-            <ul className="my-[10%] text-left">
-              {item.features.map((feature, i) => (
-                <li key={i} className="font-light mt-5">{feature}</li>
-              ))}
-            </ul>
-            
-            <button 
-              onClick={scrollToContact} 
-              className={`outline-none border-none w-full h-[50px] rounded-md font-nunito cursor-pointer text-base ${item.buttonStyle}`}
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {priceItems.map((item, index) => (
+            <div 
+              key={index} 
+              className={`relative rounded-2xl bg-white p-8 shadow-lg transition-all duration-200 hover:shadow-xl ${
+                item.isPopular ? 'ring-2 ring-cyan-200 bg-cyan-50/50' : ''
+              }`}
             >
-              Order Now
-            </button>
-          </div>
-        ))}
+              {item.isPopular && (
+                <span className="absolute -top-4 right-4 rounded-full bg-cyan-200 px-3 py-1 text-sm font-semibold">
+                  Popular
+                </span>
+              )}
+              
+              <div className="mb-6">
+                <h3 className="text-xl font-bold text-gray-900">{item.title}</h3>
+                <p className="mt-2 text-gray-500">{item.description}</p>
+              </div>
+              
+              <div className="mb-6">
+                <div className="flex items-baseline">
+                  <span className="text-4xl font-bold tracking-tight text-gray-900">
+                    {item.price}
+                  </span>
+                </div>
+              </div>
+              
+              <ul className="space-y-4">
+                {item.features.map((feature, i) => (
+                  <li key={i} className="flex items-center gap-3">
+                    <Check className="h-5 w-5 flex-shrink-0 text-cyan-500" />
+                    <span className="text-gray-700">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Pricing;
+export default Pricing
+

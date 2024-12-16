@@ -54,7 +54,7 @@ const Navbar = () => {
             height={40} 
             className="w-10 h-10"
           />
-          <span className="ml-2 text-xl font-bold text-[#04091e]">Dreem</span>
+          <span className="ml-2 text-xl font-bold text-[#04091e]">DreemScape</span>
         </div>
         <div 
           className="md:hidden cursor-pointer z-[1000]" 

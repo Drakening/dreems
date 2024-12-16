@@ -28,7 +28,7 @@ const About = () => {
         
         <div className="w-full lg:w-1/2 text-center lg:text-left">
           <p className="text-2xl font-bold text-gray-700 mb-4">
-            At Dreem, we are all about helping you express yourself!
+            At DreemScape, we are all about helping you express yourself!
           </p>
           
           <p className="text-xl text-gray-600 mb-8">
@@ -63,7 +63,7 @@ const SocialIcon = ({ Icon, color, url }) => (
   </a>
 );
 
-// Custom TikTok icon as it's not available in Lucide React
+
 const TikTokIcon = (props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
