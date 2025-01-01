@@ -28,36 +28,39 @@ const Testimonials = () => {
   return (
     <section className="px-4 py-8">
       <div className="text-center mb-8">
-          <h2 className="uppercase text-[#1f2e3b] text-xl sm:text-2xl lg:text-3xl tracking-normal font-medium text-center pb-2 mb-2 relative after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-16 after:h-1 after:bg-[#1f2e3b]">Testimonials</h2>
-          <p className="text-xl text-gray-600">Words from the Wise.</p>
-    
+        <h2 className="uppercase text-[#1f2e3b] text-xl sm:text-2xl lg:text-3xl tracking-normal font-medium text-center pb-2 mb-2 relative after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-16 after:h-1 after:bg-[#1f2e3b]">
+          Testimonials
+        </h2>
+        <p className="text-xl text-gray-600">Words from the Wise.</p>
       </div>
-      <div className="flex flex-wrap justify-center">
+      <div className="flex flex-wrap justify-center gap-8">
         {testimonialsData.map((testimonial, index) => (
-          <div 
-            key={index} 
-            className="relative w-[350px] bg-[#292828] text-white m-4 p-6 rounded-lg transition-all duration-300 ease-in-out"
+          <div
+            key={index}
+            className="relative w-[350px] bg-[#292828] text-white p-6 rounded-lg transition-all duration-300 ease-in-out"
           >
             <div className="absolute left-1/2 transform -translate-x-1/2 -top-[10%] w-full block">
-              <div 
-                className="relative h-[100px] w-[100px] mx-auto border-8 border-white rounded-full overflow-hidden 
-                           transition-all duration-300 ease-in-out hover:saturate-140 hover:scale-95"
-              >
-                <Image 
-                  src={testimonial.image} 
-                  alt={testimonial.name} 
-                  fill 
+              <div className="relative h-[100px] w-[100px] mx-auto border-8 border-white rounded-full overflow-hidden transition-all duration-300 ease-in-out hover:saturate-140 hover:scale-95">
+                <Image
+                  src={testimonial.image}
+                  alt={testimonial.name}
+                  fill
                   className="absolute top-0 left-0 rounded-full object-cover"
                 />
               </div>
-              <h2 className="text-center capitalize tracking-wider py-2">{testimonial.name}</h2>
+              <h2 className="text-center capitalize tracking-wider py-2">
+                {testimonial.name}
+              </h2>
             </div>
             <p className="mt-[50px] opacity-80 px-2 text-[15px]">
-              <span className="text-[30px] block text-left text-[#3b7cf5]">&ldquo;</span>
+              <span className="text-[30px] block text-left text-[#3b7cf5]">
+                &ldquo;
+              </span>
               {testimonial.text}
-              <span className="text-[30px] block text-right text-[#3b7cf5]">&rdquo;</span>
+              <span className="text-[30px] block text-right text-[#3b7cf5]">
+                &rdquo;
+              </span>
             </p>
-
           </div>
         ))}
       </div>
