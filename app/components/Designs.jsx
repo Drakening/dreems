@@ -78,7 +78,7 @@ const Designs = () => {
   ];
 
   return (
-    <section className="px-4">
+    <section className="px-4 max-w-7xl mx-auto">
       <div className="text-center mb-8">
         <h2 className="uppercase text-[#1f2e3b] text-xl sm:text-2xl lg:text-3xl tracking-normal font-medium text-center pb-2 mb-2 relative after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-16 after:h-1 after:bg-[#1f2e3b]">
           Recent Designs
@@ -86,11 +86,11 @@ const Designs = () => {
         <p>Discover our latest sold apparel.</p>
       </div>
 
-      <div className="flex flex-wrap justify-center sm:justify-between gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 justify-items-center">
         {designsData.map((design) => (
           <div 
             key={design.id} 
-            className="inline-block w-full sm:w-[calc(50%-1rem)] md:w-[calc(33.33%-1rem)] lg:w-[calc(25%-1rem)] max-w-[280px] m-[10px] shadow-lg hover:cursor-pointer transition-shadow duration-300 hover:shadow-xl" 
+            className="w-full max-w-[280px] shadow-lg hover:cursor-pointer transition-shadow duration-300 hover:shadow-xl" 
             onClick={() => openModal(design.image)}
           >
             <div className="relative">
@@ -140,4 +140,3 @@ const Designs = () => {
 };
 
 export default Designs;
-
