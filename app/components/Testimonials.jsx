@@ -1,71 +1,73 @@
-import Image from 'next/image';
-import Client1 from '../../public/images/jeffery-erhunse-vp9mRauo68c-unsplash.jpg';
-import Client2 from '../../public/images/prince-akachi-LWkFHEGpleE-unsplash.jpg';
-import Client3 from '../../public/images/luis-villasmil-hh3ViD0r0Rc-unsplash.jpg';
+'use client'
+import { useState } from 'react';
+import { ChevronRight } from 'lucide-react';
 
-const Testimonials = () => {
-  const testimonialsData = [
-    {
-      name: 'Emily Johnny',
-      image: Client1,
-      text:
-        "I ordered a custom hoodie with my favorite quote, and I couldn't be happier! The design was exactly what I wanted, and the fabric is so comfy. I've gotten so many compliments, and it's become my favorite piece in my wardrobe. The whole process was smooth, from design to delivery. Can't wait to order more for my friends!",
-    },
-    {
-      name: 'Sarah Lucason',
-      image: Client2,
-      text:
-        "My personalized t-shirt is an absolute gem! The design is stunning, with vibrant colors that pop. It's become my go-to shirt for casual outings, and I always get asked where I got it. Working with Dream was a breeze; they understood my vision perfectly and brought it to life. I'm beyond thrilled!",
-    },
-    {
-      name: 'Michael Smith',
-      image: Client3,
-      text:
-        "I surprised my girlfriend with a custom tee for her birthday, and she absolutely adored it! The print quality was top-notch, with vivid colors that looked amazing. It was the perfect personalized gift, and she wears it proudly. The team at Dream made the process seamless, and I couldn't be happier with the result!",
-    },
-  ];
+const Questions = () => {
+  const [openIndex, setOpenIndex] = useState(null);
+  
+  const accordion = (index) => {
+    setOpenIndex((prevIndex) => (prevIndex === index ? null : index));
+  };
 
   return (
-    <section className="px-4 py-8">
+    <section className="px-4 mb-0">
       <div className="text-center mb-8">
-        <h2 className="uppercase text-[#1f2e3b] text-xl sm:text-2xl lg:text-3xl tracking-normal font-medium text-center pb-2 mb-2 relative after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-16 after:h-1 after:bg-[#1f2e3b]">
-          Testimonials
-        </h2>
-        <p className="text-xl text-gray-600">Words from the Wise.</p>
+          <h2 className="uppercase text-[#1f2e3b] text-xl sm:text-2xl lg:text-3xl tracking-normal font-medium text-center pb-2 mb-2 relative after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-16 after:h-1 after:bg-[#1f2e3b]">Testimonials</h2>
+          <p className="text-xl text-gray-600">Words from the Wise.</p>
+    
       </div>
-      <div className="flex flex-wrap justify-center gap-8">
-        {testimonialsData.map((testimonial, index) => (
-          <div
-            key={index}
-            className="relative w-[350px] bg-[#292828] text-white p-6 rounded-lg transition-all duration-300 ease-in-out"
-          >
-            <div className="absolute left-1/2 transform -translate-x-1/2 -top-[10%] w-full block">
-              <div className="relative h-[100px] w-[100px] mx-auto border-8 border-white rounded-full overflow-hidden transition-all duration-300 ease-in-out hover:saturate-140 hover:scale-95">
-                <Image
-                  src={testimonial.image}
-                  alt={testimonial.name}
-                  fill
-                  className="absolute top-0 left-0 rounded-full object-cover"
+      
+      <div className="py-16 px-8 sm:px-2 sm:py-4 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-1 gap-8">
+          {faqData.map((faq, index) => (
+            <div key={index} className="w-full">
+              <button
+                className="w-full py-6 text-base sm:text-xl lg:text-2xl cursor-pointer bg-transparent border-none outline-none text-left transition-all duration-500 ease-linear flex items-center justify-between sm:py-4"
+                onClick={() => accordion(index)}
+              >
+                <span>{faq.question}</span>
+                <ChevronRight 
+                  className={`text-[#009ddc] transition-transform duration-300 ${openIndex === index ? 'rotate-90' : ''}`} 
+                  size={24} 
                 />
+              </button>
+              <div
+                className={`w-[80%] mx-auto overflow-hidden transition-all duration-300 ease-in-out border-b border-gray-300 sm:w-[90%] 
+                ${openIndex === index ? 'max-h-[1000px] py-4' : 'max-h-0 py-0'}`}
+              >
+                <p className="text-sm sm:text-xl lg:text-2xl text-black/75 text-left w-full">
+                  {faq.answer}
+                </p>
               </div>
-              <h2 className="text-center capitalize tracking-wider py-2">
-                {testimonial.name}
-              </h2>
             </div>
-            <p className="mt-[50px] opacity-80 px-2 text-[15px]">
-              <span className="text-[30px] block text-left text-[#3b7cf5]">
-                &ldquo;
-              </span>
-              {testimonial.text}
-              <span className="text-[30px] block text-right text-[#3b7cf5]">
-                &rdquo;
-              </span>
-            </p>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );
 };
 
-export default Testimonials;
+const faqData = [
+  {
+    question: 'How long does it take to receive my custom t-shirt?',
+    answer:
+      'Our typical turnaround time for custom orders is 7-10 business days. This includes the design process, printing, and shipping. However, complex designs or bulk orders may take a bit longer. Rest assured, we strive to get your unique piece to you as quickly as possible!',
+  },
+  {
+    question: 'Can I wash my custom apparel like regular clothing?',
+    answer:
+      'Absolutely! We use high-quality fabric paints that are durable and washable. To ensure the longevity of your design, we recommend washing your custom t-shirt inside out in cold water and air drying or using low heat in the dryer.',
+  },
+  {
+    question: 'Do you offer size options for our custom t-shirts?',
+    answer:
+      "Yes, we offer a range of sizes to accommodate all body types. If you're unsure, feel free to reach out to us, and we'll be happy to assist you in selecting the right size for your custom apparel.",
+  },
+  {
+    question: "Can I see a proof of my design before it's printed?",
+    answer:
+      "Absolutely! Once you've placed your order and submitted your design, our team will create a digital proof for your approval. We want to ensure that you're completely satisfied with the design before we proceed with printing. You'll have the opportunity to review the proof and request any adjustments if needed.",
+  },
+];
+
+export default Questions;
