@@ -32,11 +32,11 @@ const Testimonials = () => {
           <p className="text-xl text-gray-600">Words from the Wise.</p>
     
       </div>
-      <div className="flex flex-wrap justify-center">
+      <div className="flex flex-wrap justify-center gap-8 md:gap-4">
         {testimonialsData.map((testimonial, index) => (
           <div 
             key={index} 
-            className="relative w-[350px] bg-[#292828] text-white m-4 p-6 rounded-lg transition-all duration-300 ease-in-out"
+            className="relative w-[350px] bg-[#292828] text-white m-4 p-6  rounded-lg transition-all duration-300 ease-in-out"
           >
             <div className="absolute left-1/2 transform -translate-x-1/2 -top-[10%] w-full block">
               <div 
