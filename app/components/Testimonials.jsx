@@ -36,7 +36,7 @@ const Testimonials = () => {
         {testimonialsData.map((testimonial, index) => (
           <div 
             key={index} 
-            className="relative w-[350px] bg-[#292828] text-white m-4 p-6  rounded-lg transition-all duration-300 ease-in-out"
+            className="relative w-[350px] bg-[#292828] text-white m-4 p-6 gap-8 md:gap-4 rounded-lg transition-all duration-300 ease-in-out"
           >
             <div className="absolute left-1/2 transform -translate-x-1/2 -top-[10%] w-full block">
               <div 
