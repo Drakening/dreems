@@ -1,12 +1,14 @@
 import Image from 'next/image';
-
+import ScrollAnimation from './UI/ScrollAnimation';
 
 const Services = () => {
   return (
     <section className="px-4 py-8">
       <div className="text-center mb-8">
+      <ScrollAnimation>
           <h2 className="uppercase text-[#1f2e3b] text-xl sm:text-2xl lg:text-3xl tracking-normal font-medium text-center pb-2 mb-2 relative after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-16 after:h-1 after:bg-[#1f2e3b]">What we do</h2>
           <p className="text-xl text-gray-600">Crafting Dreams into Reality: Our Approach.</p>
+      </ScrollAnimation>
       </div>
       
       <div className="flex flex-col md:flex-row items-center justify-center mt-8">

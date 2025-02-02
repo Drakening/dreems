@@ -1,6 +1,7 @@
 'use client'
 import { useState } from 'react';
 import { ChevronRight } from 'lucide-react';
+import ScrollAnimation from './UI/ScrollAnimation';
 
 const Questions = () => {
   const [openIndex, setOpenIndex] = useState(null);
@@ -11,13 +12,12 @@ const Questions = () => {
 
   return (
     <section className="px-4 mb-0">
-      
+      <ScrollAnimation>
         <h2 className="uppercase text-[#1f2e3b] text-xl sm:text-2xl lg:text-3xl tracking-normal font-medium text-center pb-2 mb-2 relative after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-16 after:h-1 after:bg-[#1f2e3b]">
           Frequently asked questions
         </h2>
         <p className="text-center">Answers Await: Your FAQs Answered Here.</p>
-      
-      
+        </ScrollAnimation>
       <div className="py-16 px-8 sm:px-2 sm:py-4 max-w-4xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-1 gap-8">
           {faqData.map((faq, index) => (

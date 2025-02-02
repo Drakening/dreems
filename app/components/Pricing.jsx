@@ -2,6 +2,7 @@
 import Image from 'next/image'
 import BackgroundImage from '../../public/images/bg_char_001_pc.png'
 import { Check } from 'lucide-react'
+import ScrollAnimation from './UI/ScrollAnimation';
 
 const Pricing = () => {
   const scrollToContact = () => {
@@ -54,10 +55,12 @@ const Pricing = () => {
       style={{backgroundImage: `url(${BackgroundImage.src})`}}
     >
       <div className="text-center mb-12">
+      <ScrollAnimation>
         <h2 className="uppercase text-[#1f2e3b] text-xl sm:text-2xl lg:text-3xl tracking-normal font-medium text-center pb-2 mb-2 relative after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-16 after:h-1 after:bg-[#1f2e3b]">
           Pricing
         </h2>
         <p>Unbeatable Deals: Explore Our Low Prices.</p>
+      </ScrollAnimation>
       </div>
       
       <div className="max-w-7xl mx-auto px-4">
