@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import { FaEye } from 'react-icons/fa';
-
+import ScrollAnimation from './UI/ScrollAnimation';
 import Design1 from '../../public/images/1.webp';
 import Design2 from '../../public/images/2.webp';
 import Design3 from '../../public/images/3.webp';
@@ -80,13 +80,16 @@ const Designs = () => {
   return (
     <section className="px-4 max-w-7xl mx-auto">
       <div className="text-center mb-8">
+      <ScrollAnimation>
         <h2 className="uppercase text-[#1f2e3b] text-xl sm:text-2xl lg:text-3xl tracking-normal font-medium text-center pb-2 mb-2 relative after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-16 after:h-1 after:bg-[#1f2e3b]">
           Recent Designs
         </h2>
         <p>Discover our latest sold apparel.</p>
+      </ScrollAnimation>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 justify-items-center">
+        <ScrollAnimation>
         {designsData.map((design) => (
           <div 
             key={design.id} 
@@ -111,6 +114,7 @@ const Designs = () => {
             </div>
           </div>
         ))}
+        </ScrollAnimation>
       </div>
 
       {modalOpen && (

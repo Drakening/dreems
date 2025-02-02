@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import bgImage from '../../public/images/bg_news_pc.jpg';
 
+
 const Cta = () => {
   const scrollToContact = () => {
     const Section = document.getElementById('pricing');

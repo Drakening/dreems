@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import { Facebook, Instagram } from 'lucide-react';
 import aboutImg from '../../public/images/about.webp';
-import scrollAnimation from './UI/ScrollAnimation';
+import ScrollAnimation from './UI/ScrollAnimation';
 
 const About = () => {
   const openSocialMedia = (url) => {
@@ -12,10 +12,10 @@ const About = () => {
   return (
     <section className="px-4 sm:px-6 lg:px-8 py-16 bg-gray-50">
       <div className="text-center mb-12">
-      <scrollAnimation>
+     <ScrollAnimation>
         <h2 className="uppercase text-[#1f2e3b] text-xl sm:text-2xl lg:text-3xl tracking-normal font-medium text-center pb-2 mb-2 relative after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-16 after:h-1 after:bg-[#1f2e3b]">About Us</h2>
         <p className="text-xl text-gray-600">Sharing Our Journey, Values, and Passion.</p>
-      </scrollAnimation>
+      </ScrollAnimation>
       </div>
       
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-12">

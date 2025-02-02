@@ -1,11 +1,14 @@
 import Link from 'next/link';
+import ScrollAnimation from './UI/ScrollAnimation';
 
 const Contact = () => {
   return (
     <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-4xl mx-auto text-center">
+      <ScrollAnimation>
         <h2 className="text-4xl font-bold mb-6">Contact Us</h2>
-        
+        <p className="text-xl text-gray-600">Ask away if you have further questions.</p>
+      </ScrollAnimation>
         <div className="max-w-2xl mx-auto">
           <p className="text-xl text-gray-600 mb-10">
             {"Got an idea for the perfect custom t-shirt? Reach out to us and let's bring your vision to life with a design that's uniquely yours!"}
