@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
-export function MaskText({ children }) {
+const MaskText = ({ children }) => {
   const animation = {
     initial: { y: "100%" },
     enter: (i) => ({ y: "0", transition: { duration: 2, ease: [0.33, 1, 0.68, 1], delay: 1 * i } }),
@@ -21,3 +21,5 @@ export function MaskText({ children }) {
     </div>
   );
 }
+
+export default MaskText;
