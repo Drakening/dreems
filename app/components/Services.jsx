@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import ScrollAnimation from './UI/ScrollAnimation';
+import MaskText from '../components/UI/MaskText';
 
 const Services = () => {
   return (
@@ -44,9 +45,10 @@ const Services = () => {
               }
             ].map((feature, index) => (
               <div key={index} className="mb-4">
-                
+                <MaskText>
                   <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
                   <p className="text-gray-600">{feature.description}</p>
+                </MaskText>
               </div>
             ))}
           </div>

@@ -5,12 +5,6 @@ import { Check } from 'lucide-react'
 import ScrollAnimation from './UI/ScrollAnimation';
 
 const Pricing = () => {
-  const scrollToContact = () => {
-    const Section = document.getElementById('contact')
-    if (Section) {
-      Section.scrollIntoView({ behavior: 'smooth', block: 'start', duration: 500 })
-    }
-  }
 
   const priceItems = [
     {

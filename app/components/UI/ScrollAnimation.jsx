@@ -1,6 +1,5 @@
 'use client'
 import { motion } from "framer-motion";
-import './scrollanimation.css';
 
 const ScrollAnimation = ({ children }) => {
 	const slideInAnimationVariants = () => ({
@@ -25,7 +24,7 @@ const ScrollAnimation = ({ children }) => {
 			initial='initial'
 			whileInView='animate'
             viewport={{ once: true }}
-            className="animation"
+            className="relative w-full h-full"
 		>
 			{children}
 		</motion.div>

@@ -89,13 +89,14 @@ const Designs = () => {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 justify-items-center">
-        <ScrollAnimation>
+       
         {designsData.map((design) => (
           <div 
             key={design.id} 
             className="w-full max-w-[280px] shadow-lg hover:cursor-pointer transition-shadow duration-300 hover:shadow-xl" 
             onClick={() => openModal(design.image)}
           >
+           <ScrollAnimation>
             <div className="relative">
               <Image 
                 src={design.image} 
@@ -112,9 +113,10 @@ const Designs = () => {
               <div className="font-semibold text-xl mb-2">{design.name}</div>
               <div className="text-base text-gray-600">{design.info}</div>
             </div>
+            </ScrollAnimation>
           </div>
         ))}
-        </ScrollAnimation>
+        
       </div>
 
       {modalOpen && (
