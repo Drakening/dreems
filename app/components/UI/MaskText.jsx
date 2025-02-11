@@ -14,7 +14,7 @@ const MaskText = ({ children }) => {
   });
 
   return (
-    <div ref={ref} className="overflow-auto">
+    <div ref={ref} className="overflow-hidden">
       <motion.div variants={animation} initial="initial" animate={inView ? "enter" : ""}>
         {children}
       </motion.div>
